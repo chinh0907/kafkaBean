@@ -1,0 +1,30 @@
+#server:
+#  tomcat:
+#    threads:
+#      max: 2 # 생성할 수 있는 thread의 총개수
+#      min-spare: 2 # 항상 황성화 되어있는(idle) thread의 개수
+    #max-connections: 8192 # 수립가능한 connection의 총 개수
+#    accept-count: 1 # 작업 큐의 사이즈
+#    #connection-timeout: 20000 # timeout 판단 기준 시간, 20초 
+#  port: 5000 # 서버를 띄울 포트번호
+
+kafka:
+  bootstrap-servers: :9092
+  
+  consumer:
+    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    enable-auto-commit: false
+    auto-offset-reset: latest
+    fetch-min-bytes: 1
+    fetch-max-bytes: 52428800
+    request-timeout-ms: 30000
+    session-timeout-ms: 10000
+    heartbeat-interval-ms: 3000
+    max-partition-fatch-bytes: 1047586
+    max-poll-interval-ms: 300000
+    max-poll-records: 500
+    fetch-max-wait-ms: 500
+    partition-assignment-strategy: org.apache.kafka.clients.consumer.RangeAssignor
+
+
