@@ -9,6 +9,8 @@ public class KafkaKafkaProjectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(KafkaKafkaProjectApplication.class, args);
+
+		System.out.println("asdf");
 	}
 
 }
